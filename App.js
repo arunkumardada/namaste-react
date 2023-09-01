@@ -1,37 +1,16 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-/**
- * <div id="parent">
- *  <div id="child">
- *      <h1>This is h1 Tag</h1>
- *      <h1>This is h1 Tag</h1>
- *  </div>
- *  <div id="child2">
- *     <h2>This is h2 Tag</h2>
- *     <h2>This is h2 Tag</h2>
- *  </div>
- * </div>
- */
 
-const parent = React.createElement(
-  "div",
-  { id: "parent" },
-  [
-    React.createElement("div", { id: "child" }, [
-      React.createElement("h1", { id: "heading" }, "This is h1 Tag"),
-      React.createElement("h1", { id: "heading" }, "This is h1 Tag"),
-    ]),
-  ],
-  React.createElement("div", { id: "child2" }, [
-    React.createElement("h2", { id: "heading" }, "This is h2 Tag"),
-    React.createElement("h2", { id: "heading" }, "This is h2 Tag"),
-  ])
+// JSX Transpiles before reaching JS - Parcel - Babel
+
+// JSX -> Babel Transpiles to React.CreateElement => React Element JS Object => HTML Element(render)
+const jsxHeading = (
+  <h1 className="heading" tabIndex={1}>
+    This is Heading using JSX
+  </h1>
 );
 
-// const heading = React.createElement(
-//   "h1",
-//   { id: "heading" },
-//   "This is From React!!!"
-// );
+console.log(jsxHeading); // It returns React Element JS Object
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(parent);
+root.render(jsxHeading);
