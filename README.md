@@ -14,3 +14,15 @@
 - Code Splitting
 - Differential Bundling.(It gives support to older browsers)
 - Tree Shaking (Remove unused code)
+
+2 Types of Export/Import
+
+- Default export/import
+
+export default Component;
+import Component from "path";
+
+- Named Export/import
+
+export const Component;
+import {Component} from "path;
