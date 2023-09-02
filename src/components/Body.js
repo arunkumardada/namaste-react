@@ -4,6 +4,8 @@ import ShimmerComponent from "./Shimmer";
 const Body = () => {
   //Local State Variable - Super Powerful Variable
   const [listofRestaurants, setlistofRestaurants] = useState([]);
+  const [filteredRestaurants, setfilteredRestaurants] = useState([]);
+  const [searchTerm, setSearchTerm] = useState("");
 
   useEffect(() => {
     fetchData();
@@ -16,16 +18,42 @@ const Body = () => {
     const json = await data.json();
     //Optional Chaining
     setlistofRestaurants(
-      json?.data.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+      json?.data.cards[3]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
+    setfilteredRestaurants(
+      json?.data.cards[3]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+    );
+    console.log(json);
   };
 
   if (listofRestaurants.length === 0) {
     return <ShimmerComponent />;
   }
+  console.log("red");
   return (
     <div className="body">
       <div className="filter">
+        <div className="search">
+          {" "}
+          <input
+            type="text"
+            value={searchTerm}
+            onChange={(e) => {
+              setSearchTerm(e.target.value);
+            }}
+          />
+          <button
+            onClick={() => {
+              const filteredRestaurant = listofRestaurants.filter((res) => {
+                return res.info.name.includes(searchTerm.toLowerCase());
+              });
+              setfilteredRestaurants(filteredRestaurant);
+            }}
+          >
+            Search
+          </button>
+        </div>
+
         <button
           className="filter-btn"
           onClick={() => {
@@ -39,7 +67,7 @@ const Body = () => {
         </button>
       </div>
       <div className="res-container">
-        {listofRestaurants.map((restaurant) => {
+        {filteredRestaurants.map((restaurant) => {
           return (
             <RestaurantCard key={restaurant.info.id} resData={restaurant} />
           );
