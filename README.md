@@ -26,3 +26,8 @@ import Component from "path";
 
 export const Component;
 import {Component} from "path;
+
+# Two types of Routing in webapps
+
+- Client Side
+- Server Side
