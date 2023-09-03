@@ -10,15 +10,15 @@ class UserClass extends React.Component {
       count: 0,
       count2: 2,
     };
-    console.log("Child Constructor");
+    console.log(props.name + "Child Constructor");
   }
 
   componentDidMount() {
     //Make an API Call (Quickly Render the Component=> Make an API Call => Rerender Component with Data)
-    console.log("Child Component Did Mount");
+    console.log(this.props.name + "Child Component Did Mount");
   }
   render() {
-    console.log("Child render");
+    console.log(this.props.name + "Child render");
 
     return (
       <div className="user-card">
@@ -42,3 +42,19 @@ class UserClass extends React.Component {
 }
 
 export default UserClass;
+
+/*
+Parent Constructor
+Parent Render
+  First Child Constructor
+  First Child render
+  
+  SecondChild Constructor
+  SecondChild render
+ //DOM UPDATED IN SINGLE BATCH
+  
+ First Child Component Did Mount
+ SecondChild Component Did Mount
+Parent Component Did Mount*/
+
+// Render phase and Commit Phase.

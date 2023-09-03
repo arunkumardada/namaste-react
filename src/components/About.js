@@ -6,7 +6,7 @@ class About extends React.Component {
   constructor(props) {
     super(props);
 
-    console.log(" Parent Constructor");
+    console.log("Parent Constructor");
   }
 
   componentDidMount() {
@@ -20,7 +20,8 @@ class About extends React.Component {
       <div>
         {" "}
         <h1>About</h1>
-        <UserClass name={"Arun Kumar Dada (class Compnent)"} />
+        <UserClass name={"First "} />
+        <UserClass name={"Second"} />
       </div>
     );
   }

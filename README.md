@@ -31,3 +31,14 @@ import {Component} from "path;
 
 - Client Side
 - Server Side
+
+# React Class Life Cycle methods for Multiple Children under single parent.
+
+- Two types of phases during mounting.
+
+1. Render Phase.
+2. Commit Phase.
+
+Once After Children Render phase is completed. DOM Updated in Single Batch Component Didmount.
+
+https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/
