@@ -13,7 +13,7 @@ const RestaurantMenu = () => {
     const data = await fetch(MENU_URL + resId);
     const json = await data.json();
     setResInfo(json.data);
-    console.log(json);
+    // console.log(json);
   };
   if (resInfo === null) {
     return <ShimmerComponent />;
@@ -21,7 +21,7 @@ const RestaurantMenu = () => {
   const { name } = resInfo?.cards[0]?.card?.card?.info;
   const { itemCards } =
     resInfo?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card.card;
-  console.log(itemCards);
+  // console.log(itemCards);
   return (
     <div className="menu">
       <h1>{name}</h1>

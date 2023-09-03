@@ -24,13 +24,13 @@ const Body = () => {
     setfilteredRestaurants(
       json?.data.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
-    console.log(json);
+    // console.log(json);
   };
 
   if (listofRestaurants.length === 0) {
     return <ShimmerComponent />;
   }
-  console.log("red");
+  // console.log("red");
   return (
     <div className="body">
       <div className="filter">

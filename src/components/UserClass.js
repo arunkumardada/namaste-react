@@ -4,37 +4,41 @@ class UserClass extends React.Component {
   constructor(props) {
     super(props);
 
-    //console.log(props);
-
     this.state = {
-      count: 0,
-      count2: 2,
+      userInfo: {
+        name: "DUMMY",
+        location: "Dummy Location",
+      },
     };
-    console.log(props.name + "Child Constructor");
+    // console.log(props.name + "Child Constructor");
   }
 
-  componentDidMount() {
+  async componentDidMount() {
     //Make an API Call (Quickly Render the Component=> Make an API Call => Rerender Component with Data)
-    console.log(this.props.name + "Child Component Did Mount");
+    // console.log(this.props.name + "Child Component Did Mount");
+    const data = await fetch("https://api.github.com/users/arunkumardada");
+    const json = await data.json();
+    console.log(json);
+
+    this.setState({ userInfo: json });
+  }
+
+  componentDidUpdate() {
+    console.log("Component Did update");
+  }
+
+  componentWillUnmount() {
+    console.log("Component Will Unmount");
   }
   render() {
-    console.log(this.props.name + "Child render");
+    // console.log(this.props.name + "Child render");
 
+    const { name, location, avatar_url } = this.state.userInfo;
     return (
       <div className="user-card">
-        <h2>Count: {this.state.count}</h2>
-        <button
-          onClick={() => {
-            //Never Update State Variables Directly
-            this.setState({
-              count: this.state.count + 1,
-            });
-          }}
-        >
-          Count Increase
-        </button>
-        <h1>{this.props.name}</h1>
-        <h2>Contact</h2>
+        <img src={avatar_url} />
+        <h1>{name}</h1>
+        <h2>Location: {location}</h2>
         <h3>Email ID</h3>
       </div>
     );
@@ -43,18 +47,24 @@ class UserClass extends React.Component {
 
 export default UserClass;
 
-/*
-Parent Constructor
-Parent Render
-  First Child Constructor
-  First Child render
-  
-  SecondChild Constructor
-  SecondChild render
- //DOM UPDATED IN SINGLE BATCH
-  
- First Child Component Did Mount
- SecondChild Component Did Mount
-Parent Component Did Mount*/
-
-// Render phase and Commit Phase.
+/**
+ * ----MOUNTING LIFE CYCLE---
+ * constructor (dummy state)
+ * render (dummy state)
+ *  HTML (Dummy)
+ *
+ * Component Did Mount
+ *  <API CALL>
+ *  this.setState (State Variable is updated)
+ *
+ * ---UPDATE LIFE CYCLE---
+ *  render Method( API DATA)
+ *
+ *  HTML Loads( New API Data)
+ *
+ * Component Did Update
+ *
+ * ----UNMOUNTING----
+ * when you get away from Component(Like going to different page)
+ *
+ */
