@@ -1,7 +1,17 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const User = () => {
   const [count, setCount] = useState(0);
+  useEffect(() => {
+    const timer = setInterval(() => {
+      console.log("Interval in Fn Component");
+    }, 1000);
+
+    //Unmounting Phase like ComponentWillUnMount in Class
+    return () => {
+      clearInterval(timer);
+    };
+  });
   return (
     <div className="user-card">
       <h2>Count: {count}</h2>
