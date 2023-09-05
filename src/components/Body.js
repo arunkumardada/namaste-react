@@ -2,6 +2,7 @@ import RestaurantCard from "./RestaurantCard";
 import { useEffect, useState } from "react";
 import ShimmerComponent from "./Shimmer";
 import { Link } from "react-router-dom";
+import useOnlineStatus from "../utils/useOnlineStatus";
 const Body = () => {
   //Local State Variable - Super Powerful Variable
   const [listofRestaurants, setlistofRestaurants] = useState([]);
@@ -19,18 +20,22 @@ const Body = () => {
     const json = await data.json();
     //Optional Chaining
     setlistofRestaurants(
-      json?.data.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+      json?.data.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
     setfilteredRestaurants(
-      json?.data.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+      json?.data.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
     // console.log(json);
   };
 
+  const onlineStatus = useOnlineStatus();
+  if (onlineStatus === false) {
+    return <h1>You are Offline. Please check your Internet Connection</h1>;
+  }
+
   if (listofRestaurants.length === 0) {
     return <ShimmerComponent />;
   }
-  // console.log("red");
   return (
     <div className="body">
       <div className="filter">
