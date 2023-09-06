@@ -9,6 +9,7 @@ const RestaurantMenu = () => {
 
   //Custom Hook
   const resInfo = useRestaurantMenu(resId);
+  const [showIndex, setShowIndex] = useState(null);
   if (resInfo === null) {
     return <ShimmerComponent />;
   }
@@ -41,11 +42,14 @@ const RestaurantMenu = () => {
       </ul> */}
       {/* Categories accordions */}
 
-      {categories.map((category) => {
+      {categories.map((category, index) => {
         return (
+          // Controller COmponent
           <RestaurantCategory
             key={category?.card?.title}
             data={category?.card?.card}
+            showItems={index === showIndex && true}
+            setShowIndex={() => setShowIndex(index)}
           />
         );
       })}

@@ -1,14 +1,12 @@
 import { useState } from "react";
 import ItemList from "./ItemList";
-const RestaurantCategory = ({ data }) => {
-  const [showItems, setshowItems] = useState(false);
+const RestaurantCategory = ({ data, showItems, setShowIndex }) => {
   const handleClick = () => {
-    setshowItems(!showItems);
+    setShowIndex();
   };
   return (
     <div>
       {/* Header */}
-
       <div className="w-6/12 mx-auto my-4 bg-gray-50 shadow-lg p-4 ">
         <div
           className="flex justify-between cursor-pointer"
