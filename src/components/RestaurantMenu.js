@@ -44,7 +44,7 @@ const RestaurantMenu = () => {
 
       {categories.map((category, index) => {
         return (
-          // Controller COmponent
+          // Controlled Component
           <RestaurantCategory
             key={category?.card?.title}
             data={category?.card?.card}
