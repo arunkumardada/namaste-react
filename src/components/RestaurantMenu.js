@@ -46,6 +46,7 @@ const RestaurantMenu = () => {
         return (
           // Controlled Component
           <RestaurantCategory
+            id={index}
             key={category?.card?.title}
             data={category?.card?.card}
             showItems={index === showIndex && true}

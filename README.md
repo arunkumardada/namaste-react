@@ -42,3 +42,12 @@ import {Component} from "path;
 Once After Children Render phase is completed. DOM Updated in Single Batch Component Didmount.
 
 https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/
+
+# Redux Toolkit
+
+    - Install @redux/toolkit and react-redux
+    - Build our own store
+    - Connect our store to our app
+    - create Slice (cart slice)
+    - Dispatch an action
+    - Selector

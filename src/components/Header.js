@@ -3,6 +3,7 @@ import { LOGO_URL } from "../utils/constants";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
 import UserContext from "../utils/UserContext";
+import { useSelector } from "react-redux";
 
 const Header = () => {
   const [btnName, setbtnName] = useState("Login");
@@ -16,6 +17,9 @@ const Header = () => {
     // console.log("useEffect Rendered");
   }, [btnName]);
   const onlineStatus = useOnlineStatus();
+
+  // Subscribing to the store using a Selector
+  const cartItems = useSelector((store) => store.cart.items);
 
   return (
     <div className="flex justify-between bg-orange-50 shadow-lg m-2">
@@ -34,8 +38,8 @@ const Header = () => {
           <li className="px-4">
             <Link to="/contact">Contact US</Link>
           </li>
-          <li className="px-4">
-            <Link to="/cart">Cart</Link>
+          <li className="px-4 font-bold">
+            <Link to="/cart">Cart - {cartItems.length} items</Link>
           </li>
           <li className="px-4">
             <Link to="/grocery">Grocery</Link>
