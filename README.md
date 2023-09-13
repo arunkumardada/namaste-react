@@ -51,3 +51,20 @@ https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/
     - create Slice (cart slice)
     - Dispatch an action
     - Selector
+
+# Types of Testing (developer)
+
+- Unit Testing
+- Integration
+- End to End
+
+# Setting up Testing in our App
+
+- Install React Testing Library
+- INstalled Jest
+- Installed babel dependencies
+- Configure Babel
+- Configure parcel config file to disable default babel transpilation.
+- Jest Configuration. ( npx jest --init)
+- install jsdom library
+-
