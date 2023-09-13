@@ -11,8 +11,8 @@ describe("Contact US Component Page Test Case", () => {
     expect(heading).toBeInTheDocument();
   });
 
-  test("Should Load the button inside Contact component", () => {
-    it(<Contact />);
+  it("Should Load the button inside Contact component", () => {
+    render(<Contact />);
     const button = screen.getByRole("button");
 
     // or const button = screen.getByText("button");
@@ -21,16 +21,16 @@ describe("Contact US Component Page Test Case", () => {
     expect(button).toBeInTheDocument();
   });
 
-  test("Should Load the input name inside Contact component", () => {
-    it(<Contact />);
+  it("Should Load the input name inside Contact component", () => {
+    render(<Contact />);
     const inputName = screen.getByPlaceholderText("name");
 
     //Assertion
     expect(inputName).toBeInTheDocument();
   });
 
-  test("Should Load 2 input boxes on the Contact component", () => {
-    it(<Contact />);
+  it("Should Load 2 input boxes on the Contact component", () => {
+    render(<Contact />);
 
     //Querying
     const inputBoxes = screen.getAllByRole("textbox");
