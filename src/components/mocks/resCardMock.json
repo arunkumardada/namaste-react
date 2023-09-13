@@ -1,0 +1,78 @@
+{
+    "info": {
+        "id": "338288",
+        "name": "Baskin Robbins - Ice Cream Desserts",
+        "cloudinaryImageId": "85ccae4e3576f9330af102c46ca85395",
+        "locality": "Indira Nagar",
+        "areaName": "Gachibowli",
+        "costForTwo": "₹250 for two",
+        "cuisines": [
+            "Desserts",
+            "Ice Cream"
+        ],
+        "avgRating": 4.4,
+        "veg": true,
+        "feeDetails": {
+            "restaurantId": "338288",
+            "fees": [
+                {
+                    "name": "BASE_DISTANCE",
+                    "fee": 3600
+                },
+                {
+                    "name": "BASE_TIME"
+                },
+                {
+                    "name": "ANCILLARY_SURGE_FEE"
+                }
+            ],
+            "totalFee": 3600
+        },
+        "parentId": "5588",
+        "avgRatingString": "4.4",
+        "totalRatingsString": "100+",
+        "sla": {
+            "deliveryTime": 30,
+            "lastMileTravel": 1.1,
+            "serviceability": "SERVICEABLE",
+            "slaString": "30 mins",
+            "lastMileTravelString": "1.1 km",
+            "iconType": "ICON_TYPE_EMPTY"
+        },
+        "availability": {
+            "nextCloseTime": "2023-09-14 00:00:00",
+            "opened": true
+        },
+        "badges": {},
+        "isOpen": true,
+        "type": "F",
+        "badgesV2": {
+            "entityBadges": {
+                "imageBased": {},
+                "textBased": {},
+                "textExtendedBadges": {}
+            }
+        },
+        "aggregatedDiscountInfoV3": {
+            "header": "10% OFF",
+            "subHeader": "ABOVE ₹1000",
+            "discountTag": "FLAT DEAL"
+        },
+        "differentiatedUi": {
+            "displayType": "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+            "differentiatedUiMediaDetails": {
+                "mediaType": "ADS_MEDIA_ENUM_IMAGE",
+                "lottie": {},
+                "video": {}
+            }
+        },
+        "reviewsSummary": {},
+        "displayType": "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+        "restaurantOfferPresentationInfo": {}
+    },
+    "analytics": {},
+    "cta": {
+        "link": "https://www.swiggy.com/restaurants/baskin-robbins-ice-cream-desserts-indira-nagar-gachibowli-hyderabad-338288",
+        "type": "WEBLINK"
+    }
+}
