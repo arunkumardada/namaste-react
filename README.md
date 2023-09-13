@@ -67,4 +67,5 @@ https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/
 - Configure parcel config file to disable default babel transpilation.
 - Jest Configuration. ( npx jest --init)
 - install jsdom library
--
+- Install @babel/preset-react - to make JSX works in test cases like (<Contact/>)
+- Include @babel/preset-react inside my babel config
